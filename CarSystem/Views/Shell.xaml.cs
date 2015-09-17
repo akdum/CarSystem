@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +26,23 @@ namespace CarSystem.Views
         public Shell()
         {
             this.InitializeComponent();
+        }
+
+        private void MenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationBar.IsPaneOpen = !NavigationBar.IsPaneOpen;
+        }
+
+        private void MenuHighlight_PointerEntered(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            var panel = sender as StackPanel;
+            if (panel != null) panel.Background = new SolidColorBrush(Colors.LightBlue);
+        }
+
+        private void MenuHighlight_PointerExited(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            var panel = sender as StackPanel;
+            if (panel != null) panel.Background = new SolidColorBrush(Colors.Gray);
         }
     }
 }

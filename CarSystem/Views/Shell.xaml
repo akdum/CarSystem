@@ -14,5 +14,49 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
-    
+
+    <SplitView x:Name="NavigationBar">
+        <SplitView.Pane>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Vertical">
+                    <RadioButton x:Name="MenuButton" Foreground="{StaticResource SplitViewForegroundBrush}" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Width="50" Height="50" Background="Transparent" Click="MenuButton_Click" ></RadioButton>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" PointerEntered="MenuHighlight_PointerEntered" PointerExited="MenuHighlight_PointerExited">
+                        <Button x:Name="NavigationButton" FontFamily="Segoe MDL2 Assets" Content="&#xE128;" Width="50" Height="50" Background="Transparent" Click="MenuButton_Click" BorderThickness="0"/>
+                        <TextBlock Text="Навигация" VerticalAlignment="Center" FontSize="18"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" PointerEntered="MenuHighlight_PointerEntered" PointerExited="MenuHighlight_PointerExited">
+                        <Button x:Name="ParkingButton" FontFamily="Segoe MDL2 Assets" Content="&#xE809;" Width="50" Height="50" Background="Transparent" Click="MenuButton_Click" BorderThickness="0"></Button>
+                        <TextBlock Text="Парковка" VerticalAlignment="Center" FontSize="18"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" PointerEntered="MenuHighlight_PointerEntered" PointerExited="MenuHighlight_PointerExited">
+                        <Button x:Name="VideoButton" FontFamily="Segoe MDL2 Assets" Content="&#xE116;" Width="50" Height="50" Background="Transparent" Click="MenuButton_Click" BorderThickness="0"></Button>
+                        <TextBlock Text="Видеорегистратор" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" PointerEntered="MenuHighlight_PointerEntered" PointerExited="MenuHighlight_PointerExited">
+                        <Button x:Name="MediaButton" FontFamily="Segoe MDL2 Assets" Content="&#xEA69;" Width="50" Height="50" Background="Transparent" Click="MenuButton_Click" BorderThickness="0"></Button>
+                        <TextBlock Text="Медиа" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" PointerEntered="MenuHighlight_PointerEntered" PointerExited="MenuHighlight_PointerExited">
+                        <Button x:Name="CarButton" FontFamily="Segoe MDL2 Assets" Content="&#xE7EC;" Width="50" Height="50" Background="Transparent" Click="MenuButton_Click" BorderThickness="0"></Button>
+                        <TextBlock Text="Машина" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" PointerEntered="MenuHighlight_PointerEntered" PointerExited="MenuHighlight_PointerExited">
+                        <Button x:Name="SettingsButton" FontFamily="Segoe MDL2 Assets" Content="&#xE115;" Width="50" Height="50" Background="Transparent" Click="MenuButton_Click" BorderThickness="0"></Button>
+                        <TextBlock Text="Настройки" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <RelativePanel>
+                <TextBlock Text="Content" FontSize="54" Foreground="Black" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"></TextBlock>
+            </RelativePanel>
+        </SplitView.Content>
+    </SplitView>
 </Page>
