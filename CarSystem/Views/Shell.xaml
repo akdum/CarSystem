@@ -12,12 +12,10 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Styles/ShellStyles.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
-
-            <Style TargetType="RadioButton" BasedOn="{StaticResource SplitViewRadioButtonStyle}" />
         </ResourceDictionary>
     </Page.Resources>
 
-    <SplitView x:Name="NavigationBar">
+    <SplitView x:Name="NavigationBar" Content="{Binding}">
         <SplitView.Pane>
             <Grid>
                 <Grid.RowDefinitions>
@@ -25,22 +23,17 @@
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Orientation="Vertical">
-                    <RadioButton x:Name="MenuButton" Click="MenuButton_Click" GroupName="Hamburger" Tag="&#xE700;"></RadioButton>
+                    <RadioButton x:Name="MenuButton" Style="{StaticResource HamburgerButtonStyle}" Click="MenuButton_Click" GroupName="Hamburger" Tag="&#xE700;"></RadioButton>
                 </StackPanel>
                 <StackPanel Grid.Row="1">
-                    <RadioButton Content="Карта" GroupName="Nav" Tag="&#xE128;"></RadioButton>
-                    <RadioButton Content="Парковка" GroupName="Nav" Tag="&#xE809;"></RadioButton>
-                    <RadioButton Content="Регистратор" GroupName="Nav" Tag="&#xE116;"></RadioButton>
-                    <RadioButton Content="Медиа" GroupName="Nav" Tag="&#xEA69;"></RadioButton>
-                    <RadioButton Content="Машина" GroupName="Nav" Tag="&#xE7EC;"></RadioButton>
-                    <RadioButton Content="Настройки" GroupName="Nav" Tag="&#xE115;"></RadioButton>
+                    <RadioButton Content="Карта" Click="MapButton_Click" Style="{StaticResource SplitViewRadioButtonStyle}" GroupName="Nav" Tag="&#xE128;"></RadioButton>
+                    <RadioButton Content="Парковка" Click="ParkingButton_Click" Style="{StaticResource SplitViewRadioButtonStyle}" GroupName="Nav" Tag="&#xE809;"></RadioButton>
+                    <RadioButton Content="Регистратор" GroupName="Nav" Tag="&#xE116;" Style="{StaticResource SplitViewRadioButtonStyle}"></RadioButton>
+                    <RadioButton Content="Медиа" GroupName="Nav" Tag="&#xEA69;" Style="{StaticResource SplitViewRadioButtonStyle}"></RadioButton>
+                    <RadioButton Content="Машина" GroupName="Nav" Tag="&#xE7EC;" Style="{StaticResource SplitViewRadioButtonStyle}"></RadioButton>
+                    <RadioButton Content="Настройки" GroupName="Nav" Tag="&#xE115;" Style="{StaticResource SplitViewRadioButtonStyle}"></RadioButton>
                 </StackPanel>
             </Grid>
         </SplitView.Pane>
-        <SplitView.Content>
-            <RelativePanel>
-                <TextBlock Text="Content" FontSize="54" Foreground="Black" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"></TextBlock>
-            </RelativePanel>
-        </SplitView.Content>
     </SplitView>
 </Page>

@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -33,16 +20,24 @@ namespace CarSystem.Views
             NavigationBar.IsPaneOpen = !NavigationBar.IsPaneOpen;
         }
 
-        private void MenuHighlight_PointerEntered(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void MapButton_Click(object sender, RoutedEventArgs e)
         {
-            var panel = sender as StackPanel;
-            if (panel != null) panel.Background = new SolidColorBrush(Colors.LightBlue);
+            var frame = DataContext as Frame;
+            Page page = frame?.Content as Page;
+            if (page?.GetType() != typeof(Map))
+            {
+                frame.Navigate(typeof(Map));
+            }
         }
 
-        private void MenuHighlight_PointerExited(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void ParkingButton_Click(object sender, RoutedEventArgs e)
         {
-            var panel = sender as StackPanel;
-            if (panel != null) panel.Background = new SolidColorBrush(Colors.Gray);
+            var frame = DataContext as Frame;
+            Page page = frame?.Content as Page;
+            if (page?.GetType() != typeof(Parking))
+            {
+                frame.Navigate(typeof(Parking));
+            }
         }
     }
 }
