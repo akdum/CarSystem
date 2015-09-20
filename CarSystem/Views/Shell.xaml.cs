@@ -1,5 +1,6 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using CarSystem.Utils;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -12,7 +13,7 @@ namespace CarSystem.Views
     {
         public Shell()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
@@ -22,22 +23,32 @@ namespace CarSystem.Views
 
         private void MapButton_Click(object sender, RoutedEventArgs e)
         {
-            var frame = DataContext as Frame;
-            Page page = frame?.Content as Page;
-            if (page?.GetType() != typeof(Map))
-            {
-                frame.Navigate(typeof(Map));
-            }
+            Navigation.NavgateTo(DataContext, typeof(Map));
         }
 
         private void ParkingButton_Click(object sender, RoutedEventArgs e)
         {
-            var frame = DataContext as Frame;
-            Page page = frame?.Content as Page;
-            if (page?.GetType() != typeof(Parking))
-            {
-                frame.Navigate(typeof(Parking));
-            }
+            Navigation.NavgateTo(DataContext, typeof(Parking));
+        }
+
+        private void RecorderButton_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NavgateTo(DataContext, typeof(Recorder));
+        }
+
+        private void MediaButton_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NavgateTo(DataContext, typeof(Media));
+        }
+
+        private void CarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NavgateTo(DataContext, typeof(Car));
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NavgateTo(DataContext, typeof(Settings));
         }
     }
 }
