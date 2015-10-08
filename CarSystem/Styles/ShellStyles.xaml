@@ -8,8 +8,6 @@
     <SolidColorBrush x:Key="NavButtonCheckedBackgroundBrush" Color="White" Opacity="0.2" />
     <SolidColorBrush x:Key="NavButtonPressedBackgroundBrush" Color="White" Opacity="0.3" />
 
-    <x:String x:Key="MapNavText">Навигация</x:String>
-
     <Style TargetType="SplitView">
         <Setter Property="IsPaneOpen" Value="False" />
         <Setter Property="OpenPaneLength" Value="250" />
