@@ -14,33 +14,28 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
-    <Grid Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Background="Transparent" Height="70" Width="70" VerticalAlignment="Stretch" HorizontalAlignment="Left" Padding="0" Margin="0">
-            <Button x:Name="MenuButton" BorderThickness="0" Height="70" Width="70" HorizontalAlignment="Center" Style="{StaticResource HamburgerButtonStyle}" Click="MenuButton_Click" Content="&#xE700;"></Button>
-        </StackPanel>
-        <SplitView Grid.Row="1" x:Name="NavigationBar" Content="{Binding}" Style="{StaticResource ShellSplitViewStyle}">
-            <SplitView.Pane>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="70"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="0">
-                        <RadioButton x:Uid="MapShellButton" Click="MapButton_Click" Style="{StaticResource SplitViewRadioButtonStyle}" GroupName="Nav" Tag="&#xE128;"></RadioButton>
-                        <RadioButton x:Uid="ParkingShellButton" Click="ParkingButton_Click" Style="{StaticResource SplitViewRadioButtonStyle}" GroupName="Nav" Tag="&#xE809;"></RadioButton>
-                        <RadioButton x:Uid="RecorderShellButton" Click="RecorderButton_Click" GroupName="Nav" Tag="&#xE116;" Style="{StaticResource SplitViewRadioButtonStyle}"></RadioButton>
-                        <RadioButton x:Uid="MediaShellButton" GroupName="Nav" Tag="&#xEA69;" Style="{StaticResource SplitViewRadioButtonStyle}" Click="MediaButton_Click"></RadioButton>
-                        <RadioButton x:Uid="CarShellButton" GroupName="Nav" Tag="&#xE7EC;" Style="{StaticResource SplitViewRadioButtonStyle}" Click="CarButton_Click"></RadioButton>
-                    </StackPanel>
-                    <StackPanel Grid.Row="1">
-                        <RadioButton x:Uid="SettingsShellButton" GroupName="Nav" Tag="&#xE115;" Style="{StaticResource SplitViewRadioButtonStyle}" Click="SettingsButton_Click"></RadioButton>
-                    </StackPanel>
-                </Grid>
-            </SplitView.Pane>
-        </SplitView>
-    </Grid>
+    <SplitView Grid.Row="1" x:Name="NavigationBar" Content="{Binding}" Style="{StaticResource ShellSplitViewStyle}">
+        <SplitView.Pane>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <Button x:Name="MenuButton" BorderThickness="0" Style="{StaticResource HamburgerButtonStyle}" Click="MenuButton_Click" Content="&#xE700;"></Button>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <RadioButton x:Uid="MapShellButton" Click="MapButton_Click" Style="{StaticResource SplitViewRadioButtonStyle}" GroupName="Nav" Tag="&#xE128;"></RadioButton>
+                    <RadioButton x:Uid="ParkingShellButton" Click="ParkingButton_Click" Style="{StaticResource SplitViewRadioButtonStyle}" GroupName="Nav" Tag="&#xE809;"></RadioButton>
+                    <RadioButton x:Uid="RecorderShellButton" Click="RecorderButton_Click" GroupName="Nav" Tag="&#xE116;" Style="{StaticResource SplitViewRadioButtonStyle}"></RadioButton>
+                    <RadioButton x:Uid="MediaShellButton" GroupName="Nav" Tag="&#xEA69;" Style="{StaticResource SplitViewRadioButtonStyle}" Click="MediaButton_Click"></RadioButton>
+                    <RadioButton x:Uid="CarShellButton" GroupName="Nav" Tag="&#xE7EC;" Style="{StaticResource SplitViewRadioButtonStyle}" Click="CarButton_Click"></RadioButton>
+                </StackPanel>
+                <StackPanel Grid.Row="2">
+                    <RadioButton x:Uid="SettingsShellButton" GroupName="Nav" Tag="&#xE115;" Style="{StaticResource SplitViewRadioButtonStyle}" Click="SettingsButton_Click"></RadioButton>
+                </StackPanel>
+            </Grid>
+        </SplitView.Pane>
+    </SplitView>
 </Page>

@@ -120,6 +120,9 @@
   <data name="CarShellButton.Content" xml:space="preserve">
     <value>Машина</value>
   </data>
+  <data name="CommonSettingsText.Text" xml:space="preserve">
+    <value>Общие</value>
+  </data>
   <data name="MapShellButton.Content" xml:space="preserve">
     <value>Карта</value>
   </data>
