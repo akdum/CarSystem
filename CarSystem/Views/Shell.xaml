@@ -22,7 +22,7 @@
         <StackPanel Grid.Row="0" Background="Transparent" Height="70" Width="70" VerticalAlignment="Stretch" HorizontalAlignment="Left" Padding="0" Margin="0">
             <Button x:Name="MenuButton" BorderThickness="0" Height="70" Width="70" HorizontalAlignment="Center" Style="{StaticResource HamburgerButtonStyle}" Click="MenuButton_Click" Content="&#xE700;"></Button>
         </StackPanel>
-        <SplitView Grid.Row="1" x:Name="NavigationBar" Content="{Binding}">
+        <SplitView Grid.Row="1" x:Name="NavigationBar" Content="{Binding}" Style="{StaticResource ShellSplitViewStyle}">
             <SplitView.Pane>
                 <Grid>
                     <Grid.RowDefinitions>
